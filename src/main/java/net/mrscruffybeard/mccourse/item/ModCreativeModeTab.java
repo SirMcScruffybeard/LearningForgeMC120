@@ -18,11 +18,20 @@ public class ModCreativeModeTab {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ALEXANDRITE.get()))
                     .title(Component.translatable("creativetab.course_tab"))
                     .displayItems((displayParameters, output) -> {
+
+                        //Items
                         output.accept(ModItems.ALEXANDRITE.get());
                         output.accept(ModItems.RAW_ALEXANDRITE.get());
 
+                        //Building Blocks
                         output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
                         output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+
+                        //Ores
+                        output.accept(ModBlocks.ALEXANDRITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get());
+                        output.accept(ModBlocks.END_STONE_ALEXANDRITE_ORE.get());
+                        output.accept(ModBlocks.NETHER_ALEXANDRITE_ORE.get());
 
                     }).build());
 
