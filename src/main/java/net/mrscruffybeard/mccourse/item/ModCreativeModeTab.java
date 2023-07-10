@@ -37,5 +37,7 @@ public class ModCreativeModeTab {
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
+
+
     }
 }
