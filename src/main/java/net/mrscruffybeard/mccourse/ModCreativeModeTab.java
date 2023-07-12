@@ -1,4 +1,4 @@
-package net.mrscruffybeard.mccourse.item;
+package net.mrscruffybeard.mccourse;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
 import net.mrscruffybeard.mccourse.block.ModBlocks;
+import net.mrscruffybeard.mccourse.item.ModItems;
 
 public class ModCreativeModeTab {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -34,6 +35,8 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.END_STONE_ALEXANDRITE_ORE.get());
                         output.accept(ModBlocks.NETHER_ALEXANDRITE_ORE.get());
 
+                        //Other Blocks
+                        output.accept(ModBlocks.SOUND_BLOCK.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {
