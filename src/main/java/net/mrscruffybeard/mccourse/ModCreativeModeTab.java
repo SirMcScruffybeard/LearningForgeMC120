@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
 import net.mrscruffybeard.mccourse.block.ModBlocks;
+import net.mrscruffybeard.mccourse.item.ModFoodProperties;
 import net.mrscruffybeard.mccourse.item.ModItems;
 
 public class ModCreativeModeTab {
@@ -24,6 +25,9 @@ public class ModCreativeModeTab {
                         output.accept(ModItems.ALEXANDRITE.get());
                         output.accept(ModItems.RAW_ALEXANDRITE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
+
+                        //Foods
+                        output.accept(ModItems.KOHLRABI.get());
 
                         //Building Blocks
                         output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
