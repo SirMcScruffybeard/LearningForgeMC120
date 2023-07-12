@@ -20,5 +20,9 @@
 
   "block.mccourse.sound_block": "Sound Block",
 
+  "tooltip.mccourse.metal_detector.tool.tip.shift": "Right Click on Blocks to find Valuables!",
+  "tooltip.mccourse.metal_detector.tool.tip": "Press §eSHIFT§r for more Information",
+  "toolTip.mccourse.sound_block": "Plays nice sounds when stepped on or right clicked",
+
   "creativetab.course_tab": "Course Tab"
 }
