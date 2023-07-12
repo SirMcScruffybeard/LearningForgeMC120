@@ -29,6 +29,9 @@ public class ModCreativeModeTab {
                         //Foods
                         output.accept(ModItems.KOHLRABI.get());
 
+                        //Fuels
+                        output.accept(ModItems.PEAT_BRICK.get());
+
                         //Building Blocks
                         output.accept(ModBlocks.ALEXANDRITE_BLOCK.get());
                         output.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
