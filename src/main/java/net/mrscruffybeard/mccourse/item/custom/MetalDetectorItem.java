@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.mrscruffybeard.mccourse.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -66,8 +67,7 @@ public class MetalDetectorItem extends Item {
     }//End outputValuableCoordinates
 
     private boolean isValuableBlock(BlockState blockState) {
-        return blockState.is(Blocks.IRON_ORE) || blockState.is(Blocks.DEEPSLATE_IRON_ORE)
-                || blockState.is(Blocks.COPPER_ORE);
+        return blockState.is(ModTags.Blocks.METAL_DETECTOR_VALUABLES);
     }//End isValuableBlock
 
     @Override
