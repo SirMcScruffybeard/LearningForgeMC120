@@ -47,7 +47,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.ALEXANDRITE_SLAB.get(),
                         ModBlocks.RAW_ALEXANDRITE_SLAB.get(),
 
-                        ModBlocks.SOUND_BLOCK.get());
+                        ModBlocks.SOUND_BLOCK.get(),
+
+                        ModBlocks.ALEXANDRITE_BUTTON.get(),
+
+                        ModBlocks.ALEXANDRITE_PESSURE_PLATE.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL);
 

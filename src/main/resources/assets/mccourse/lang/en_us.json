@@ -23,9 +23,10 @@
   "block.mccourse.alexandrite_slab": "Alexandrite Slab",
   "block.mccourse.raw_alexandrite_slab": "Raw Alexandrite Slab",
 
-
-
   "block.mccourse.sound_block": "Sound Block",
+
+  "block.mccourse.alexandrite_button": "Alexandrite Button",
+  "block.mccourse.alexandrite_pressure_plate": "Alexandrite Pressure Plate",
 
   "tooltip.mccourse.metal_detector.tool.tip.shift": "Right Click on Blocks to find Valuables!",
   "tooltip.mccourse.metal_detector.tool.tip": "Press §eSHIFT§r for more Information",

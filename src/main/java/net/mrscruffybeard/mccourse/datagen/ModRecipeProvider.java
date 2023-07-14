@@ -4,6 +4,7 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -54,13 +55,40 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         slabBuilder(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_SLAB.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
         slabBuilder(pWriter, RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_SLAB.get(), ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+
+        pressurePlateBuilder(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_PESSURE_PLATE.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
+
+        buttonBuilder(pWriter,RecipeCategory.MISC, ModBlocks.ALEXANDRITE_BUTTON.get(), ModItems.ALEXANDRITE.get());
     }
 
     private String hasUnlock(Block block) {
         return "has_" + block.getName();
     }
+    private String hasUnlock(Item item) {
+        return "has_" + item.getDescriptionId();
+    }
 
-    protected void stairBuilder(Consumer<FinishedRecipe> pWriter,RecipeCategory recipeCategory, Block result, Block ingredient) {
+    protected void buttonBuilder(Consumer<FinishedRecipe> pWriter,RecipeCategory recipeCategory, Block result, Block ingredient) {
+        ShapelessRecipeBuilder.shapeless(recipeCategory, result)
+                .requires(ingredient)
+                .unlockedBy(this.hasUnlock(ingredient), inventoryTrigger(ItemPredicate.Builder.item().of(ingredient).build()))
+                .save(pWriter);
+    }
+    protected void buttonBuilder(Consumer<FinishedRecipe> pWriter,RecipeCategory recipeCategory, Block result, Item ingredient) {
+                ShapelessRecipeBuilder.shapeless(recipeCategory, result)
+                .requires(ingredient)
+                .unlockedBy(this.hasUnlock(ingredient), inventoryTrigger(ItemPredicate.Builder.item().of(ingredient).build()))
+                .save(pWriter);
+    }
+    protected void pressurePlateBuilder(Consumer<FinishedRecipe> pWriter,RecipeCategory recipeCategory, Block result, Block ingredient) {
+        ShapedRecipeBuilder.shaped(recipeCategory, result)
+                .pattern("AA")
+                .define('A', ingredient)
+                .unlockedBy(this.hasUnlock(ingredient), inventoryTrigger(ItemPredicate.Builder.item().of(ingredient).build()))
+                .save(pWriter);
+    }
+
+    protected void stairBuilder(Consumer<FinishedRecipe> pWriter, RecipeCategory recipeCategory, Block result, Block ingredient) {
         ShapedRecipeBuilder.shaped(recipeCategory, result)
                 .pattern("A  ")
                 .pattern("AA ")
