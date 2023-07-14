@@ -42,6 +42,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createSlabItemTable(ModBlocks.ALEXANDRITE_SLAB.get()));
         this.add(ModBlocks.RAW_ALEXANDRITE_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.RAW_ALEXANDRITE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.ALEXANDRITE_PESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.ALEXANDRITE_BUTTON.get());
     }
 
     @Override

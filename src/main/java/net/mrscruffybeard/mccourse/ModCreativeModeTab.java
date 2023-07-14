@@ -50,6 +50,11 @@ public class ModCreativeModeTab {
 
                         //Other Blocks
                         output.accept(ModBlocks.SOUND_BLOCK.get());
+
+                        output.accept(ModBlocks.ALEXANDRITE_BUTTON.get());
+
+                        output.accept(ModBlocks.ALEXANDRITE_PESSURE_PLATE.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus) {
