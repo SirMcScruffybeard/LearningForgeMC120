@@ -1,0 +1,9 @@
+// 1.20.1	2023-07-13T16:34:15.1996638	Block Tags
+7990d65a7be225378804e8a855b495b83a94d760 data/mccourse/tags/blocks/metal_detector_valuables.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/axe.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/hoe.json
+7be6581dd7664282c8ba568978b475c99de60aa8 data/minecraft/tags/blocks/mineable/pickaxe.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/mineable/shovel.json
+6dd642dc4bc8d0a18816d1f9abf49125ed509a2b data/minecraft/tags/blocks/needs_diamond_tool.json
+8aba583ead3031529e0082587e52ec1b948bdc71 data/minecraft/tags/blocks/needs_iron_tool.json
+25e466cd1ba914d4e24cb0f54cc06b3299fbfd55 data/minecraft/tags/blocks/needs_stone_tool.json

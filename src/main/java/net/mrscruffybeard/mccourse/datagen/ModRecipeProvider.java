@@ -8,6 +8,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.mrscruffybeard.mccourse.MCCourseMod;
 import net.mrscruffybeard.mccourse.block.ModBlocks;
@@ -47,6 +48,34 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oreSmelting(pWriter,ALEXANDRITE_SMELTABLE, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 0.25f, 200, "alexandrite");
         oreBlasting(pWriter,ALEXANDRITE_SMELTABLE, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(), 0.25f, 100, "alexandrite");
+
+        stairBuilder(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_STAIRS.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
+        stairBuilder(pWriter, RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_STAIRS.get(), ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+
+        slabBuilder(pWriter, RecipeCategory.MISC, ModBlocks.ALEXANDRITE_SLAB.get(), ModBlocks.ALEXANDRITE_BLOCK.get());
+        slabBuilder(pWriter, RecipeCategory.MISC, ModBlocks.RAW_ALEXANDRITE_SLAB.get(), ModBlocks.RAW_ALEXANDRITE_BLOCK.get());
+    }
+
+    private String hasUnlock(Block block) {
+        return "has_" + block.getName();
+    }
+
+    protected void stairBuilder(Consumer<FinishedRecipe> pWriter,RecipeCategory recipeCategory, Block result, Block ingredient) {
+        ShapedRecipeBuilder.shaped(recipeCategory, result)
+                .pattern("A  ")
+                .pattern("AA ")
+                .pattern("AAA")
+                .define('A', ingredient)
+                .unlockedBy(this.hasUnlock(ingredient), inventoryTrigger(ItemPredicate.Builder.item().of(ingredient).build()))
+                .save(pWriter);
+    }
+
+    protected void slabBuilder(Consumer<FinishedRecipe> pWriter,RecipeCategory recipeCategory, Block result, Block ingredient) {
+        ShapedRecipeBuilder.shaped(recipeCategory, result)
+                .pattern("AAA")
+                .define('A', ingredient)
+                .unlockedBy(this.hasUnlock(ingredient), inventoryTrigger(ItemPredicate.Builder.item().of(ingredient).build()))
+                .save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory,

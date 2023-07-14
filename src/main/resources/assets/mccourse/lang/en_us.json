@@ -3,6 +3,7 @@
   "item.mccourse.raw_alexandrite": "Raw Alexandrite",
 
   "item.mccourse.metal_detector": "Metal Detector",
+  "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
 
   "item.mccourse.kohlrabi": "Kohlrabi",
 
@@ -16,7 +17,13 @@
   "block.mccourse.end_stone_alexandrite_ore": "End Stone Alexandrite Ore",
   "block.mccourse.nether_alexandrite_ore": "Nether Alexandrite Ore",
 
-  "item.mccourse.metal_detector.no_valuables": "No Valuables Found!",
+  "block.mccourse.alexandrite_stairs": "Alexandrite Stairs",
+  "block.mccourse.raw_alexandrite_stairs": "Raw Alexandrite Stairs",
+
+  "block.mccourse.alexandrite_slab": "Alexandrite Slab",
+  "block.mccourse.raw_alexandrite_slab": "Raw Alexandrite Slab",
+
+
 
   "block.mccourse.sound_block": "Sound Block",
 
