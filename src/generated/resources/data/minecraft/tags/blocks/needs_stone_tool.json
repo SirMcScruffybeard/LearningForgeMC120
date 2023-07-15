@@ -1,5 +1,7 @@
 {
   "values": [
-    "mccourse:sound_block"
+    "mccourse:sound_block",
+    "mccourse:alexandrite_button",
+    "mccourse:alexandrite_pressure_plate"
   ]
 }

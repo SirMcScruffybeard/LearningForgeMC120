@@ -50,14 +50,20 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SOUND_BLOCK.get(),
 
                         ModBlocks.ALEXANDRITE_BUTTON.get(),
+                        ModBlocks.ALEXANDRITE_PESSURE_PLATE.get(),
 
-                        ModBlocks.ALEXANDRITE_PESSURE_PLATE.get());
+                        ModBlocks.ALEXANDRITE_FENCE.get(),
+                        ModBlocks.ALEXANDRITE_FENCE_GATE.get(),
+                        ModBlocks.ALEXANDRITE_WALL.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL);
 
         this.tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(
-                        ModBlocks.SOUND_BLOCK.get());
+                        ModBlocks.SOUND_BLOCK.get(),
+
+                        ModBlocks.ALEXANDRITE_BUTTON.get(),
+                        ModBlocks.ALEXANDRITE_PESSURE_PLATE.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(
@@ -70,13 +76,32 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.RAW_ALEXANDRITE_STAIRS.get(),
 
                         ModBlocks.ALEXANDRITE_SLAB.get(),
-                        ModBlocks.RAW_ALEXANDRITE_SLAB.get());
+                        ModBlocks.RAW_ALEXANDRITE_SLAB.get(),
+
+                        ModBlocks.ALEXANDRITE_FENCE.get(),
+                        ModBlocks.ALEXANDRITE_FENCE_GATE.get(),
+                        ModBlocks.ALEXANDRITE_WALL.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(
                         ModBlocks.DEEPSLATE_ALEXANDRITE_ORE.get(),
                         ModBlocks.END_STONE_ALEXANDRITE_ORE.get(),
                         ModBlocks.NETHER_ALEXANDRITE_ORE.get());
+
+        this.tag(BlockTags.FENCES)
+                .add(
+                  ModBlocks.ALEXANDRITE_FENCE.get()
+                );
+
+        this.tag(BlockTags.FENCE_GATES)
+                .add(
+                        ModBlocks.ALEXANDRITE_FENCE_GATE.get()
+                );
+
+        this.tag(BlockTags.WALLS)
+                .add(
+                        ModBlocks.ALEXANDRITE_WALL.get()
+                );
     }
 
     @Override

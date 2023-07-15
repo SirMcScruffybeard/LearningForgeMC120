@@ -28,6 +28,10 @@
   "block.mccourse.alexandrite_button": "Alexandrite Button",
   "block.mccourse.alexandrite_pressure_plate": "Alexandrite Pressure Plate",
 
+  "block.mccourse.alexandrite_fence": "Alexandrite Fence",
+  "block.mccourse.alexandrite_fence_gate": "Alexandrite Gate",
+  "block.mccourse.alexandrite_wall": "Alexandrite Wall",
+
   "tooltip.mccourse.metal_detector.tool.tip.shift": "Right Click on Blocks to find Valuables!",
   "tooltip.mccourse.metal_detector.tool.tip": "Press §eSHIFT§r for more Information",
   "toolTip.mccourse.sound_block": "Plays nice sounds when stepped on or right clicked",

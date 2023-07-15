@@ -52,8 +52,12 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.SOUND_BLOCK.get());
 
                         output.accept(ModBlocks.ALEXANDRITE_BUTTON.get());
-
                         output.accept(ModBlocks.ALEXANDRITE_PESSURE_PLATE.get());
+
+                        output.accept(ModBlocks.ALEXANDRITE_FENCE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_WALL.get());
+
 
                     }).build());
 

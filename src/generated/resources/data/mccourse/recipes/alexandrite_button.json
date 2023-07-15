@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mccourse:alexandrite"
+    }
+  ],
+  "result": {
+    "item": "mccourse:alexandrite_button"
+  }
+}

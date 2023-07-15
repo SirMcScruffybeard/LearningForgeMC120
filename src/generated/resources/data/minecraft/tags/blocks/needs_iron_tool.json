@@ -7,6 +7,9 @@
     "mccourse:alexandrite_stairs",
     "mccourse:raw_alexandrite_stairs",
     "mccourse:alexandrite_slab",
-    "mccourse:raw_alexandrite_slab"
+    "mccourse:raw_alexandrite_slab",
+    "mccourse:alexandrite_fence",
+    "mccourse:alexandrite_fence_gate",
+    "mccourse:alexandrite_wall"
   ]
 }
