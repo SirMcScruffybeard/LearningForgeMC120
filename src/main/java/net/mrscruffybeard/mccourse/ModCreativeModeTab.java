@@ -60,6 +60,7 @@ public class ModCreativeModeTab {
 
                         output.accept(ModBlocks.ALEXANDRITE_DOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_TRAP_DOOR.get());
+                        output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
 
                         //Tools
                         output.accept(ModItems.ALEXANDRITE_SWORD.get());

@@ -14,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
+import net.mrscruffybeard.mccourse.block.custom.AlexandriteLampBlock;
 import net.mrscruffybeard.mccourse.block.custom.SoundBlock;
 import net.mrscruffybeard.mccourse.item.ModItems;
 
@@ -77,6 +78,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ALEXANDRITE_TRAP_DOOR = registerBlock("alexandrite_trap_door",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK), BlockSetType.IRON));
+
+    public static final RegistryObject<Block> ALEXANDRITE_LAMP = registerBlock("alexandrite_lamp",
+            () -> new AlexandriteLampBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.GLASS)
+                    .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)));
 
 
     private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
