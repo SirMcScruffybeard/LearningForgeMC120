@@ -25,7 +25,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_ALEXANDRITE);
 
         simpleItem(ModItems.KOHLRABI);
+
         simpleItem(ModItems.METAL_DETECTOR);
+        simpleItem(ModItems.DATA_TABLET);
+
         simpleItem(ModItems.PEAT_BRICK);
 
         simpleBlockItem(ModBlocks.ALEXANDRITE_DOOR);

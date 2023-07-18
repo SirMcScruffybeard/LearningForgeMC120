@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
+import net.mrscruffybeard.mccourse.item.custom.DataTablet;
 import net.mrscruffybeard.mccourse.item.custom.FuelItem;
 import net.mrscruffybeard.mccourse.item.custom.MetalDetectorItem;
 
@@ -50,6 +51,9 @@ public class ModItems {
     public static final RegistryObject<Item> ALEXANDRITE_HOE = ITEMS.register(ALEXANDRITE_NAME + "_hoe",
             () -> new HoeItem(ModToolTiers.ALEXANDRITE, 1, 3,
                     new Item.Properties().durability(256)));
+
+    public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
+            () -> new DataTablet(new Item.Properties().stacksTo(1)));
     public static void register(IEventBus eventBus) {
 
         ITEMS.register(eventBus);

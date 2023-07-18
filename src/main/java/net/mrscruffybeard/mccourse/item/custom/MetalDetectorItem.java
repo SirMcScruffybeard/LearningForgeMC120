@@ -3,6 +3,7 @@ package net.mrscruffybeard.mccourse.item.custom;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -14,6 +15,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.mrscruffybeard.mccourse.item.ModItems;
+import net.mrscruffybeard.mccourse.util.InventoryUtil;
 import net.mrscruffybeard.mccourse.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,6 +24,8 @@ import java.util.List;
 
 public class MetalDetectorItem extends Item {
 
+    public static final String FOUND_ORE_KEY = "mccourse.found_ore";
+    private String comma = " ,";
 
     public MetalDetectorItem(Properties pProperties) {
         super(pProperties);
@@ -40,6 +45,11 @@ public class MetalDetectorItem extends Item {
                     outputValuableCoordinates(positionClicked.below(i), player, blockState.getBlock());
                     foundBlock = true;
 
+                    if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET.get())){
+                        addDataToDataTablet(player, positionClicked.below(i), blockState.getBlock());
+
+                    }
+
                     break;
                 }// if isValuableBlock
             }// for loop
@@ -54,6 +64,16 @@ public class MetalDetectorItem extends Item {
 
         return InteractionResult.SUCCESS;
     }//End useOn
+
+    private void addDataToDataTablet(Player player, BlockPos below, Block block) {
+        ItemStack dataTablet = player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItems.DATA_TABLET.get()));
+
+        CompoundTag data = new CompoundTag();
+        data.putString(FOUND_ORE_KEY, "Valuable Found:  " + I18n.get(block.getDescriptionId())
+                + " at (" + below.getX() + comma + below.getY() + comma + below.getZ() + ")");
+
+        dataTablet.setTag(data);
+    }
 
     private void outPutNoValuableFound(Player player) {
         player.sendSystemMessage(Component.translatable("item.mccourse.metal_detector.no_valuables"));

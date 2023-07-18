@@ -25,6 +25,7 @@ public class ModCreativeModeTab {
                         output.accept(ModItems.ALEXANDRITE.get());
                         output.accept(ModItems.RAW_ALEXANDRITE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
+                        output.accept(ModItems.DATA_TABLET.get());
 
                         //Foods
                         output.accept(ModItems.KOHLRABI.get());
