@@ -64,6 +64,8 @@ public class ModCreativeModeTab {
                         output.accept(ModBlocks.ALEXANDRITE_TRAP_DOOR.get());
                         output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
 
+                        output.accept(ModBlocks.GEM_EMPOWERING_STATION.get());
+
                         //Tools
                         output.accept(ModItems.ALEXANDRITE_SWORD.get());
                         output.accept(ModItems.ALEXANDRITE_PICKAXE.get());

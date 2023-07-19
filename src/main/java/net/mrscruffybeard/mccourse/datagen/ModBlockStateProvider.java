@@ -70,6 +70,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         customLamp();
 
         makeCrop(((ModCropBlock)ModBlocks.KOHLRABI_CROP.get()), KohlrabiCropBlock.KHOLRABI + "_stage", KohlrabiCropBlock.KHOLRABI + "_stage");
+
+        horizontalBlock(ModBlocks.GEM_EMPOWERING_STATION.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_empowering_station")));
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {

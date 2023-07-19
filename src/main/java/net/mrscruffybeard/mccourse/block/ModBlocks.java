@@ -15,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
 import net.mrscruffybeard.mccourse.block.custom.AlexandriteLampBlock;
+import net.mrscruffybeard.mccourse.block.custom.GemEmpoweringStationBlock;
 import net.mrscruffybeard.mccourse.block.custom.KohlrabiCropBlock;
 import net.mrscruffybeard.mccourse.block.custom.SoundBlock;
 import net.mrscruffybeard.mccourse.item.ModItems;
@@ -86,6 +87,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register(KohlrabiCropBlock.PATH_NAME,
             () -> new KohlrabiCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+
+    public static final RegistryObject<Block> GEM_EMPOWERING_STATION = registerBlock(GemEmpoweringStationBlock.PATH_NAME,
+            () -> new GemEmpoweringStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

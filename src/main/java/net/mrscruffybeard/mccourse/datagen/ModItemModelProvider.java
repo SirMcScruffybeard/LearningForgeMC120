@@ -44,7 +44,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         handHeldItem(ModItems.ALEXANDRITE_SHOVEL);
         handHeldItem(ModItems.ALEXANDRITE_HOE);
 
+        complexBlock(ModBlocks.GEM_EMPOWERING_STATION.get());
+    }
 
+    private ItemModelBuilder complexBlock(Block block) {
+        return withExistingParent(ForgeRegistries.BLOCKS.getKey(block).getPath(), new ResourceLocation(MCCourseMod.MOD_ID,
+                "block/" + ForgeRegistries.BLOCKS.getKey(block).getPath()));
     }
 
     private ItemModelBuilder handHeldItem(RegistryObject<Item> item){
