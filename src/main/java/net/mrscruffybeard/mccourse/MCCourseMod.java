@@ -2,6 +2,7 @@ package net.mrscruffybeard.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -13,6 +14,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.mrscruffybeard.mccourse.block.ModBlocks;
+import net.mrscruffybeard.mccourse.block.custom.KohlrabiCropBlock;
+import net.mrscruffybeard.mccourse.item.ModItemProperties;
 import net.mrscruffybeard.mccourse.item.ModItems;
 import org.slf4j.Logger;
 
@@ -44,6 +47,10 @@ public class MCCourseMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
+        event.enqueueWork(() -> {
+            ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI.get(), KohlrabiCropBlock.KHOLRABI_COMPOST_CHANCE);
+            ComposterBlock.COMPOSTABLES.put(ModItems.KOHLRABI_SEEDS.get(), KohlrabiCropBlock.KHOLRABI_SEED_COMPOST_CHANCE);
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -78,7 +85,10 @@ public class MCCourseMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                ModItemProperties.addCustomItemProperties();
 
+            });
         }//onClientSetup
     }//ClientModEvents
 }

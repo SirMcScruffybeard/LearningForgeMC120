@@ -15,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
 import net.mrscruffybeard.mccourse.block.custom.AlexandriteLampBlock;
+import net.mrscruffybeard.mccourse.block.custom.KohlrabiCropBlock;
 import net.mrscruffybeard.mccourse.block.custom.SoundBlock;
 import net.mrscruffybeard.mccourse.item.ModItems;
 
@@ -83,6 +84,8 @@ public class ModBlocks {
             () -> new AlexandriteLampBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.GLASS)
                     .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)));
 
+    public static final RegistryObject<Block> KOHLRABI_CROP = BLOCKS.register(KohlrabiCropBlock.PATH_NAME,
+            () -> new KohlrabiCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
     private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

@@ -3,6 +3,7 @@ package net.mrscruffybeard.mccourse.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -12,6 +13,10 @@ import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
 import net.mrscruffybeard.mccourse.block.ModBlocks;
 import net.mrscruffybeard.mccourse.block.custom.AlexandriteLampBlock;
+import net.mrscruffybeard.mccourse.block.custom.KohlrabiCropBlock;
+import net.mrscruffybeard.mccourse.block.custom.ModCropBlock;
+
+import java.util.function.Function;
 
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -63,6 +68,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.ALEXANDRITE_TRAP_DOOR, "_bottom");
 
         customLamp();
+
+        makeCrop(((ModCropBlock)ModBlocks.KOHLRABI_CROP.get()), KohlrabiCropBlock.KHOLRABI + "_stage", KohlrabiCropBlock.KHOLRABI + "_stage");
+    }
+
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> states(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((ModCropBlock) block).getAgeProperty()),
+                new ResourceLocation(MCCourseMod.MOD_ID, "block/" + textureName +
+                        state.getValue(((ModCropBlock) block).getAgeProperty()))).renderType("cutout"));
+        return models;
     }
 
     private void customLamp() {

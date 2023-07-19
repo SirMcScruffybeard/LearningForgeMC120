@@ -25,9 +25,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_ALEXANDRITE);
 
         simpleItem(ModItems.KOHLRABI);
+        simpleItem(ModItems.KOHLRABI_SEEDS);
 
         simpleItem(ModItems.METAL_DETECTOR);
-        simpleItem(ModItems.DATA_TABLET);
+        //simpleItem(ModItems.DATA_TABLET);
 
         simpleItem(ModItems.PEAT_BRICK);
 
@@ -42,6 +43,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handHeldItem(ModItems.ALEXANDRITE_AXE);
         handHeldItem(ModItems.ALEXANDRITE_SHOVEL);
         handHeldItem(ModItems.ALEXANDRITE_HOE);
+
+
     }
 
     private ItemModelBuilder handHeldItem(RegistryObject<Item> item){

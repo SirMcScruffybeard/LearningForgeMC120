@@ -29,6 +29,7 @@ public class ModCreativeModeTab {
 
                         //Foods
                         output.accept(ModItems.KOHLRABI.get());
+                        output.accept(ModItems.KOHLRABI_SEEDS.get());
 
                         //Fuels
                         output.accept(ModItems.PEAT_BRICK.get());

@@ -6,6 +6,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.mrscruffybeard.mccourse.MCCourseMod;
+import net.mrscruffybeard.mccourse.block.ModBlocks;
+import net.mrscruffybeard.mccourse.block.custom.KohlrabiCropBlock;
 import net.mrscruffybeard.mccourse.item.custom.DataTablet;
 import net.mrscruffybeard.mccourse.item.custom.FuelItem;
 import net.mrscruffybeard.mccourse.item.custom.MetalDetectorItem;
@@ -54,6 +56,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
             () -> new DataTablet(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> KOHLRABI_SEEDS = ITEMS.register(KohlrabiCropBlock.SEED_PATH_NAME,
+            () -> new ItemNameBlockItem(ModBlocks.KOHLRABI_CROP.get(), new Item.Properties()));
     public static void register(IEventBus eventBus) {
 
         ITEMS.register(eventBus);
