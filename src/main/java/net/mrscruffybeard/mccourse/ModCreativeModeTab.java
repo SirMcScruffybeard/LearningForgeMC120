@@ -73,6 +73,8 @@ public class ModCreativeModeTab {
                         output.accept(ModItems.ALEXANDRITE_SHOVEL.get());
                         output.accept(ModItems.ALEXANDRITE_HOE.get());
 
+                        output.accept(ModItems.RADIATION_STAFF.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus) {
